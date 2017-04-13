@@ -67,11 +67,18 @@
   (setq-default powerline-default-separator (quote arrow))
   (setq-default powerline-height 20))
 
-(use-package spacemacs-theme
+;; (use-package spacemacs-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'spacemacs-light t))
+
+(use-package base16-theme
   :ensure t
   :init
-  (load-theme 'spacemacs-dark t))
-
+  ;; (load-theme 'base16-eighties t)
+  (load-theme 'base16-flat)
+  ;;(load-theme 'base16-gruvbox-dark-soft)
+  )
 
 (use-package spaceline
   :after powerline
@@ -123,9 +130,6 @@
   )
 
 
-
-;;Paradox git-hub integration
-(setq paradox-github-token "735e2160225c7b9dfe2c8cc057675261188e9044")
 
 ;;company mode
 (use-package company
@@ -276,7 +280,7 @@
      ("tabbing"))))
  '(custom-safe-themes
    (quote
-    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
+    ("93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "73ad471d5ae9355a7fa28675014ae45a0589c14492f52c32a4e9b393fcc333fd" "cabc32838ccceea97404f6fcb7ce791c6e38491fd19baa0fcfb336dcc5f6e23c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(js-curly-indent-offset 1)
  '(js-indent-level 2)
  '(magit-diff-use-overlays nil)
@@ -285,8 +289,8 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
- '(paradox-github-token t)
+    (base16-theme projectile gruvbox-theme rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
+ '(paradox-github-token t t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
