@@ -58,36 +58,56 @@
        )
   )
 
+
+(use-package darktooth-theme
+  :ensure t
+  :init
+  (load-theme 'darktooth t))
+
+;; (use-package solarized-theme
+;;   :init
+;;   (load-theme 'solarized t))
+
+;; (use-package zenburn-theme
+;;   :init
+;;   (load-theme 'zenburn t))
+
 ;; Icon package
 (use-package all-the-icons :ensure t)
 
-(use-package powerline
+(use-package powerline :ensure t)
+
+(use-package spaceline
+  :after powerline
   :ensure t
   :config
-  (setq-default powerline-default-separator (quote arrow))
-  (setq-default powerline-height 20))
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme))
+
+;; (use-package spaceline-all-the-icons
+;;   :after spaceline
+;;   :config (spaceline-all-the-icons-theme))
 
 ;; (use-package spacemacs-theme
 ;;   :ensure t
 ;;   :init
 ;;   (load-theme 'spacemacs-light t))
 
-(use-package base16-theme
-  :ensure t
-  :init
-  ;; (load-theme 'base16-eighties t)
-  (load-theme 'base16-flat)
-  ;;(load-theme 'base16-gruvbox-dark-soft)
-  )
+;; (use-package base16-theme
+;;   :ensure t
+;;   :init
+;;   ;; (load-theme 'base16-eighties t)
+;;   (load-theme 'base16-flat)
+;;   ;;(load-theme 'base16-gruvbox-dark-soft)
+;;   )
 
-(use-package spaceline
-  :after powerline
-  :ensure t
-  :init
-  (use-package spaceline-config)
-  (spaceline-spacemacs-theme)
-  (spaceline-toggle-battery-on))
-
+;; (use-package challenger-deep-theme
+;;   :ensure t
+;;   :init
+;;   ;; (load-theme 'base16-eighties t)
+;;   (load-theme 'challenger-deep t)
+;;   ;;(load-theme 'base16-gruvbox-dark-soft)
+;;   )
 
 
 (scroll-bar-mode -1)
@@ -147,7 +167,7 @@
 
 (use-package flycheck
   :ensure t
-  :config
+  :init
   (global-flycheck-mode)
   
   (setq-default flycheck-disabled-checkers
@@ -167,8 +187,8 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (setq js2-strict-missing-semi-warning nil)
-  (setq js2-missing-semi-one-line-override t))
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil))
 
 
 
@@ -177,7 +197,14 @@
   (setq-default fill-column 80)
   :config
   (setq fci-rule-column 80)
-  (setq fci-rule-width 1))
+  (setq fci-rule-width 1)
+  (define-globalized-minor-mode global-fci-mode fci-mode
+    (lambda () (if (or (derived-mode-p 'prog-mode) (eq major-mode 'text-mode))
+                   (progn
+                     (setq fci-rule-color "#8cd0d3")
+                     (fci-mode 1)))
+      ))
+  (global-fci-mode 1))
 
 
 ;; Configuration for fill-column
@@ -278,9 +305,13 @@
      ("equation*")
      ("picture")
      ("tabbing"))))
+ '(ansi-color-names-vector
+   ["#2c3e50" "#e74c3c" "#2ecc71" "#f1c40f" "#3498db" "#9b59b6" "#3498db" "#e0e0e0"])
+ '(ansi-term-color-vector
+   [unspecified "#2c3e50" "#e74c3c" "#2ecc71" "#f1c40f" "#3498db" "#9b59b6" "#3498db" "#e0e0e0"])
  '(custom-safe-themes
    (quote
-    ("93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "73ad471d5ae9355a7fa28675014ae45a0589c14492f52c32a4e9b393fcc333fd" "cabc32838ccceea97404f6fcb7ce791c6e38491fd19baa0fcfb336dcc5f6e23c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
+    ("a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "c9321e2db48a21fc656a907e97ee85d8cd86967855bf0bed3998bcf9195c758b" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "10e231624707d46f7b2059cc9280c332f7c7a530ebc17dba7e506df34c5332c4" "deaf0dad46995bc682dd0acf1f0327cab82f1cf0025755ebb1bab714d0a6e8d3" "2d32455b3acc27bef4dc912f74c14a371cf7167a075bbd4f90ac14e761359e5b" "93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "73ad471d5ae9355a7fa28675014ae45a0589c14492f52c32a4e9b393fcc333fd" "cabc32838ccceea97404f6fcb7ce791c6e38491fd19baa0fcfb336dcc5f6e23c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(js-curly-indent-offset 1)
  '(js-indent-level 2)
  '(magit-diff-use-overlays nil)
@@ -289,8 +320,8 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (base16-theme projectile gruvbox-theme rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
- '(paradox-github-token t t)
+    (spaceline-all-the-icons darktooth-theme dracula-theme nord-theme challenger-deep-theme base16-theme projectile gruvbox-theme rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
+ '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
