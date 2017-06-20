@@ -5,7 +5,9 @@ Currently Only emacs configs are here.
 
 ### ToDo: 
 - [x] .emacs.d/
+- [ ] .bashrc
 - [ ] .zshrc
+- [ ] .config/i3/
 - [ ] .gitignore
 - [ ] script to setup symlinks 
 - [ ] .eslintrc
