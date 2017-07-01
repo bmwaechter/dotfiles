@@ -9,11 +9,10 @@ export PATH=$PATH:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/home/ben/.gem/ruby/2.4.0/bin
 export DATABASE_URL=postgres:///$(whoami)
 
-eval `dircolors -b ~/term_config/dircolors-solarized/dircolors.256dark`
-export LS_COLORS
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] &&
+    [ -s $BASE16_SHELL/profile_helper.sh ] &&
+    eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
