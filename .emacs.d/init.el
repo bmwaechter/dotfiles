@@ -39,6 +39,7 @@
 ;; Requires
 (use-package org-bullets)
 
+(pdf-tools-install)
 (use-package magit
   :bind ("C-x g" . magit-status))
 
@@ -59,10 +60,10 @@
   )
 
 
-(use-package darktooth-theme
+(use-package base16-theme
   :ensure t
   :init
-  (load-theme 'darktooth t))
+  (load-theme 'base16-paraiso t))
 
 ;; (use-package solarized-theme
 ;;   :init
@@ -313,7 +314,7 @@
    [unspecified "#2c3e50" "#e74c3c" "#2ecc71" "#f1c40f" "#3498db" "#9b59b6" "#3498db" "#e0e0e0"])
  '(custom-safe-themes
    (quote
-    ("a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "c9321e2db48a21fc656a907e97ee85d8cd86967855bf0bed3998bcf9195c758b" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "10e231624707d46f7b2059cc9280c332f7c7a530ebc17dba7e506df34c5332c4" "deaf0dad46995bc682dd0acf1f0327cab82f1cf0025755ebb1bab714d0a6e8d3" "2d32455b3acc27bef4dc912f74c14a371cf7167a075bbd4f90ac14e761359e5b" "93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "73ad471d5ae9355a7fa28675014ae45a0589c14492f52c32a4e9b393fcc333fd" "cabc32838ccceea97404f6fcb7ce791c6e38491fd19baa0fcfb336dcc5f6e23c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
+    ("ffe80c88e3129b2cddadaaf78263a7f896d833a77c96349052ad5b7753c0c5a5" "a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "c9321e2db48a21fc656a907e97ee85d8cd86967855bf0bed3998bcf9195c758b" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "10e231624707d46f7b2059cc9280c332f7c7a530ebc17dba7e506df34c5332c4" "deaf0dad46995bc682dd0acf1f0327cab82f1cf0025755ebb1bab714d0a6e8d3" "2d32455b3acc27bef4dc912f74c14a371cf7167a075bbd4f90ac14e761359e5b" "93268bf5365f22c685550a3cbb8c687a1211e827edc76ce7be3c4bd764054bad" "73ad471d5ae9355a7fa28675014ae45a0589c14492f52c32a4e9b393fcc333fd" "cabc32838ccceea97404f6fcb7ce791c6e38491fd19baa0fcfb336dcc5f6e23c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(js-curly-indent-offset 0)
  '(js-indent-level 2)
  '(magit-diff-use-overlays nil)
@@ -322,7 +323,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (spaceline-all-the-icons darktooth-theme dracula-theme nord-theme challenger-deep-theme base16-theme projectile gruvbox-theme rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
+    (interleave pdf-tools spaceline-all-the-icons darktooth-theme dracula-theme nord-theme challenger-deep-theme base16-theme projectile gruvbox-theme rust-mode tide spacemacs-theme fancy-battery use-package spaceline all-the-icons neotree color-theme-solarized solarized-theme ensime magit js2-mode auctex intero fill-column-indicator haskell-mode paradox sublime-themes color-theme-sanityinc-tomorrow zenburn-theme)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
