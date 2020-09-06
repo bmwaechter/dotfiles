@@ -1,5 +1,5 @@
 # Ben Waechter's dotfiles
-config files for my Linux (or GNU/Linux if you want to be petty) systems. 
+config files for my Linux systems. 
 
 Currently Only emacs configs are here.  
 
